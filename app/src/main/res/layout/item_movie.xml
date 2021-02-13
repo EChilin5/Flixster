@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/grey"
+    android:layout_marginBottom="0.25dp">
+
+    <ImageView
+        android:id="@+id/ivPoster"
+        android:layout_width="117dp"
+        android:layout_height="170dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="3dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/ivTitle"
+        android:layout_width="284dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="127dp"
+        android:text=" "
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:paddingTop="10dp"
+        android:paddingRight="2dp"
+        tools:text="Fast  Furious Presents: Hobbs  Shaw" />
+
+    <TextView
+        android:id="@+id/tvOverView"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDate"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="12dp"
+        android:paddingRight="2dp"
+        android:layout_toEndOf="@+id/ivPoster"
+        android:textColor="@color/white"
+        tools:text="spinoff of The Fate of the Furious, focusing on Johnson's US Siplomatic Security Agent Luke Hobbs forming an unlikely alliance with Statham's Deckard Shaw" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="117dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivTitle"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@+id/ivPoster"
+        android:text="Date"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        tools:text="Date" />
+
+</RelativeLayout>
