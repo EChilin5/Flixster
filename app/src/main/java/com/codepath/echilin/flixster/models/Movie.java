@@ -1,5 +1,9 @@
 package com.codepath.echilin.flixster.models;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,6 +17,7 @@ public class Movie {
     String title;
     String overView;
     String date;
+    int rating;
 
     public Movie(JSONObject jsonObject) throws JSONException {
         backdropPath = jsonObject.getString("backdrop_path");
@@ -20,6 +25,8 @@ public class Movie {
         title = jsonObject.getString("title");
         overView = jsonObject.getString("overview");
         date = jsonObject.getString("release_date");
+        rating = jsonObject.getInt("vote_average");
+
     }
 
     public static List<Movie> fromJsonArray(JSONArray movieJsonArray) throws JSONException {
@@ -27,6 +34,7 @@ public class Movie {
         for(int i = 0; i< movieJsonArray.length(); i++){
             movies.add(new Movie(movieJsonArray.getJSONObject(i)));
         }
+
         return movies;
     }
     public String getBackdropPath(){
@@ -52,7 +60,11 @@ public class Movie {
         return description;
     }
 
+
     public String getDate(){
         return date;
+    }
+    public int getRating(){
+        return rating;
     }
 }

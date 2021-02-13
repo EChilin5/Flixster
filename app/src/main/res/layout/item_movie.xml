@@ -33,6 +33,7 @@
         android:textSize="24sp"
         android:paddingTop="10dp"
         android:paddingRight="2dp"
+        android:gravity="center"
         tools:text="Fast  Furious Presents: Hobbs  Shaw" />
 
     <TextView
@@ -51,7 +52,7 @@
 
     <TextView
         android:id="@+id/tvDate"
-        android:layout_width="117dp"
+        android:layout_width="267dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ivTitle"
         android:layout_marginStart="9dp"
@@ -59,7 +60,7 @@
         android:layout_toEndOf="@+id/ivPoster"
         android:text="Date"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="14sp"
         tools:text="Date" />
 
 </RelativeLayout>

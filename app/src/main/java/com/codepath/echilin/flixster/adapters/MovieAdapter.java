@@ -2,6 +2,7 @@
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -46,6 +48,7 @@ public class MovieAdapter extends  RecyclerView.Adapter<MovieAdapter.ViewHolder>
 
         //Get teh movie at the passed in postion
         Movie movie = movies.get(position);
+
         //bind the movie data into the VH
         holder.bind(movie);
     }
@@ -60,7 +63,7 @@ public class MovieAdapter extends  RecyclerView.Adapter<MovieAdapter.ViewHolder>
 
         TextView tvtitle;
         TextView tvOverView;
-        TextView releaseDate;
+        TextView releaseDateRating;
         ImageView ivPoster;
 
 
@@ -69,13 +72,13 @@ public class MovieAdapter extends  RecyclerView.Adapter<MovieAdapter.ViewHolder>
             tvtitle = itemView.findViewById(R.id.ivTitle);
             tvOverView = itemView.findViewById(R.id.tvOverView);
             ivPoster = itemView.findViewById(R.id.ivPoster);
-            releaseDate = itemView.findViewById(R.id.tvDate);
+            releaseDateRating = itemView.findViewById(R.id.tvDate);
         }
 
         public void bind(Movie movie) {
             tvtitle.setText(movie.getTitle());
             tvOverView.setText(movie.getOverView());
-            releaseDate.setText(movie.getDate());
+            releaseDateRating.setText("Release: " + movie.getDate() + "\nRating: " + movie.getRating() );
             String imageUrl;
             //if phone is landscape
             if(context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
