@@ -7,17 +7,24 @@ import androidx.annotation.RequiresApi;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Parcel
 public class Movie {
     String backdropPath;
     String posterPath;
     String title;
     String overView;
     String date;
-    int rating;
+    double rating;
+
+    // empty constructor needed by the Parceler library
+    public Movie(){
+
+    }
 
     public Movie(JSONObject jsonObject) throws JSONException {
         backdropPath = jsonObject.getString("backdrop_path");
@@ -26,6 +33,7 @@ public class Movie {
         overView = jsonObject.getString("overview");
         date = jsonObject.getString("release_date");
         rating = jsonObject.getInt("vote_average");
+
 
     }
 
@@ -64,7 +72,7 @@ public class Movie {
     public String getDate(){
         return date;
     }
-    public int getRating(){
+    public double getRating(){
         return rating;
     }
 }
