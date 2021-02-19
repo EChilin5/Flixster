@@ -1,5 +1,6 @@
  package com.codepath.echilin.flixster.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -26,7 +28,9 @@ import org.parceler.Parcels;
 
 import java.util.List;
 
-public class MovieAdapter extends  RecyclerView.Adapter<MovieAdapter.ViewHolder> {
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+
+ public class MovieAdapter extends  RecyclerView.Adapter<MovieAdapter.ViewHolder> {
 
     Context context;
     List<Movie> movies;
@@ -96,7 +100,11 @@ public class MovieAdapter extends  RecyclerView.Adapter<MovieAdapter.ViewHolder>
             }
             //then imageUrl = back drop image
             //else imageUrl = posterimage
-            Glide.with(context).load(imageUrl).into(ivPoster);
+            int radius = 30; // corner radius, higher value = more rounded
+            int margin = 10;
+            Glide.with(context).load(imageUrl).placeholder(R.mipmap.ic_launcher).error(R.mipmap.ic_launcher).transform(new RoundedCornersTransformation(radius, margin)).into(ivPoster);
+
+//            Glide.with(context).load(imageUrl).transform(new RoundedCornersTransformation(radius, margin)).into(ivPoster);
             // register click listener om the whole container
             // Navigate to a new activity on tap
 
@@ -106,8 +114,10 @@ public class MovieAdapter extends  RecyclerView.Adapter<MovieAdapter.ViewHolder>
                 public void onClick(View v) {
                     Intent i = new Intent(context, DetailActivity.class);
                     i.putExtra("movie", Parcels.wrap(movie));
-                    context.startActivity(i);
-
+                    ActivityOptionsCompat options = ActivityOptionsCompat.
+                            makeSceneTransitionAnimation((Activity) context, (View)container, "profile");
+                    context.startActivity(i, options.toBundle());
+//                    context.startActivity(i);
                 }
             });
         }
