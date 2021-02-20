@@ -60,14 +60,17 @@ public class Movie {
         return title;
     }
 
-    public String getOverView() {
+    public String getpartialOverView() {
         String[] newOverView = overView.split(" ");
-        String description = "";
+        StringBuilder description = new StringBuilder();
         for(int i = 0; i < 15; i++ ){
-            description = description + " " + newOverView[i];
+            description.append(" ").append(newOverView[i]);
         }
-        description = description + " ...";
-        return description;
+        description.append(" ...");
+        return description.toString();
+    }
+    public String getOverView(){
+        return overView;
     }
 
 

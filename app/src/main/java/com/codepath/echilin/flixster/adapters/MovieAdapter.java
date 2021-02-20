@@ -89,7 +89,7 @@ import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
         public void bind(Movie movie) {
             tvtitle.setText(movie.getTitle());
-            tvOverView.setText(movie.getOverView());
+            tvOverView.setText(movie.getpartialOverView());
             releaseDateRating.setText("Release: " + movie.getDate() + "\nRating: " + movie.getRating() );
             String imageUrl;
             //if phone is landscape
@@ -104,9 +104,6 @@ import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
             int margin = 10;
             Glide.with(context).load(imageUrl).placeholder(R.mipmap.ic_launcher).error(R.mipmap.ic_launcher).transform(new RoundedCornersTransformation(radius, margin)).into(ivPoster);
 
-//            Glide.with(context).load(imageUrl).transform(new RoundedCornersTransformation(radius, margin)).into(ivPoster);
-            // register click listener om the whole container
-            // Navigate to a new activity on tap
 
 
             container.setOnClickListener(new View.OnClickListener() {

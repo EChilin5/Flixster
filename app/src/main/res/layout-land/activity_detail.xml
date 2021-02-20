@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
-    tools:context=".DetailActivity">
+    android:background="@color/grey"
+    tools:context=".DetailActivity"
+    android:transitionName="profile"
+    android:scaleType="centerCrop">
 
     <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/player"
         android:layout_width="match_parent"
-        android:layout_height="250dp" />
+        android:layout_height="169dp"
+    />
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="30sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
         tools:text="IT Chapter 2" />
 
 
@@ -29,11 +36,21 @@
         android:layout_height="wrap_content"
         android:isIndicator="true"
         android:numStars="10"
-        android:rating="8.5" />
+        android:rating="8.5"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"/>
 
     <TextView
         android:id="@+id/tvOverview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Sample Overview" />
+        android:textColor="@color/white"
+        tools:text="Sample Overview"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        />
 </LinearLayout>
