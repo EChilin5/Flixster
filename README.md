@@ -13,8 +13,8 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 #### BONUS
 
 - [x] Implement a shared element transition when user clicks into the details of a movie (1 point).
-- [ ] Trailers for popular movies are played automatically when the movie is selected (1 point).
-  - [ ] When clicking on a popular movie (i.e. a movie voted for more than 5 stars) the video should be played immediately.
+- [x] Trailers for popular movies are played automatically when the movie is selected (1 point).
+  - [x] When clicking on a popular movie (i.e. a movie voted for more than 5 stars) the video should be played immediately.
   - [ ] Less popular videos rely on the detailed page should show an image preview that can initiate playing a YouTube video.
 - [ ] Add a play icon overlay to popular movies to indicate that the movie can be played (1 point).
 - [ ] Apply data binding for views to help remove boilerplate code. (1 point)
@@ -23,11 +23,22 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 ### App Walkthough GIF
 
 
-<img src="YOUR_GIF_URL_HERE" width=250><br>
+<img src="https://github.com/EChilin5/Flixster/blob/master/walkthrough_part2_1.gif" width=250><br>
+
+<img src="https://github.com/EChilin5/Flixster/blob/master/walkthrough_part2_2.gif" width=250><br>
+
+
+<img src="https://github.com/EChilin5/Flixster/blob/master/walkthrough_part2_3.gif" width=250><br>
 
 ### Notes
 
 Describe any challenges encountered while building the app.
+
+The challenges I faced for this portion of the assignment was the shared element. As I forgot to include a 
+specific id which made the landscape version to crash. After reviewing the code I was able to locate. Additionally
+getting the api to work was troublesome as I had to downgrade to api 29 since it allowed the video to play. 
+My emulator is kind of slow so it will take a while for it to load so I couldn't tell if it worked or not. There are 
+times where the UI might crash as it loading but if I wait it will load eventually.
 
 ## Open-source libraries used
 - [Android Async HTTP](https://github.com/codepath/CPAsyncHttpClient) - Simple asynchronous HTTP requests with JSON parsing
@@ -54,6 +65,8 @@ Describe any challenges encountered while building the app.
 <img src="https://github.com/EChilin5/Flixster/blob/master/walkthrough.gif" width=250><br>
 
 <img src="https://github.com/EChilin5/Flixster/blob/master/walkthrough2.gif" width=250><br>
+
+
 
 ### Notes
 Describe any challenges encountered while building the app.
