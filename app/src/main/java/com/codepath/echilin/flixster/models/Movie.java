@@ -63,7 +63,7 @@ public class Movie {
     public String getpartialOverView() {
         String[] newOverView = overView.split(" ");
         StringBuilder description = new StringBuilder();
-        for(int i = 0; i < 15; i++ ){
+        for(int i = 0; i < 10; i++ ){
             description.append(" ").append(newOverView[i]);
         }
         description.append(" ...");
@@ -84,4 +84,8 @@ public class Movie {
     public int getMovieID() {
         return movieID;
     }
+
+
+
+
 }
